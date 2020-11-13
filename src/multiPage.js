@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import { Document, Page } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
 
-import pdfSample from "./pdfs/pdfSample.pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const MultiPage = props => {
 
@@ -13,15 +14,16 @@ const MultiPage = props => {
     }
 
 
+const {pdf}=props
 
-
-  return <div>
+  return <div className='pdfHold'>
 
     <Document 
     
-    file={pdfSample}
-    options={{workerSrc:'/pdf.worker.js'}}
+    // options={{workerSrc:'../'}}
+    file={pdf}
     onLoadSuccess={onSuccess}
+    onSourceError={(err)=>console.log(err)}
     
     >
 
