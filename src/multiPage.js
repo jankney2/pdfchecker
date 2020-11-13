@@ -16,11 +16,12 @@ const MultiPage = props => {
 
 const {pdf}=props
 
-  return <div className='pdfHold'>
+  return <div >
 
     <Document 
     
     // options={{workerSrc:'../'}}
+    className='pdfHold'
     file={pdf}
     onLoadSuccess={onSuccess}
     onSourceError={(err)=>console.log(err)}

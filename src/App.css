@@ -28,6 +28,20 @@
   color: #61dafb;
 }
 
+.pdfHold {
+  width: 100%;
+  margin:auto;
+  border: 1px solid #000;
+  display: inline-block
+  /* overflow: scroll; */
+}
+
+
+
+
+
+
+
 
 
 
